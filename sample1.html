@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bokamoso Warehouse - Quality Furniture in Pretoria</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e74c3c;
+      --accent: #3498db;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --text: #333;
+      --text-light: #7f8c8d;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    nav {
+      background: var(--dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 20px;
+    }
+    
+    nav a {
+      color: white;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+    
+    .section {
+      padding: 4rem 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2rem;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: var(--secondary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .feature {
+      flex: 1;
+      min-width: 250px;
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .feature i {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .catalogue-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .product {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .product:hover .product-image img {
+      transform: scale(1.05);
+    }
+    
+    .product-info {
+      padding: 1.5rem;
+    }
+    
+    .product h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .product p {
+      color: var(--text-light);
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .price {
+      font-weight: 700;
+      color: var(--secondary);
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    
+    .btn-order {
+      padding: 0.6rem 1.2rem;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn-order:hover {
+      background: #128C7E;
+    }
+    
+    .product-icons {
+      display: flex;
+      gap: 0.8rem;
+    }
+    
+    .product-icons a {
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    
+    .product-icons a:hover {
+      color: var(--accent);
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .contact-card {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .contact-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    .delivery-info {
+      margin-top: 2rem;
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    
+    .delivery-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    
+    .delivery-table th, .delivery-table td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .delivery-table th {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .delivery-table tr:nth-child(even) {
+      background: rgba(0,0,0,0.05);
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .copyright {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      nav a {
+        margin: 0.5rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">Bokamoso Warehouse</div>
+      <div class="tagline">Quality Furniture at Affordable Prices</div>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="nav-container">
+      <a href="#about">About Us</a>
+      <a href="#products">Our Products</a>
+      <a href="#delivery">Delivery Info</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Home With Quality Furniture</h1>
+      <p>Beautiful, durable furniture delivered to your door across Gauteng</p>
+      <a href="#products" class="btn">View Our Collection</a>
+    </div>
+  </section>
+  
+  <section id="about" class="section">
+    <div class="section-title">
+      <h2>About Bokamoso Warehouse</h2>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Located in the heart of Pretoria, Bokamoso Warehouse has been providing high-quality, affordable furniture to homes across Gauteng since 2015. We specialize in bringing you stylish, durable furniture that combines comfort, functionality, and value.</p>
+        <p>Our extensive range includes headboards in all sizes, chests of drawers, chairs, couches, pedestals, dining sets, TV & coffee stands, wardrobes, mattresses, study tables, and much more.</p>
+        
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-truck"></i>
+            <h3>Reliable Delivery</h3>
+            <p>We deliver throughout Gauteng with transparent pricing</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h3>Flexible Payment</h3>
+            <p>Pay with cash or EFT upon delivery</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-star"></i>
+            <h3>Quality Products</h3>
+            <p>Durable furniture built to last</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Furniture showroom">
+      </div>
+    </div>
+  </section>
+  
+  <section id="products" class="section">
+    <div class="section-title">
+      <h2>Our Headboard Collection</h2>
+    </div>
+    <div class="catalogue-container">
+      <div class="product">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Classic Headboard">
+        </div>
+        <div class="product-info">
+          <h3>Classic Headboard</h3>
+          <p>Available in all standard sizes</p>
+          <p>Colors: Grey, Black, Beige</p>
+          <div class="price">R850</div>
+          <div class="product-actions">
+            <a href="https://wa.me/27123456789?text=I%20want%20to%20order%20the%20Classic%20Headboard" class="btn-order">Order Now</a>
+            <div class="product-icons">
+              <a href="tel:+27123456789" title="Call us"><i class="fas fa-phone"></i></a>
+              <a href="https://wa.me/27123456789" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Upholstered Headboard">
+        </div>
+        <div class="product-info">
+          <h3>Upholstered Headboard</h3>
+          <p>Available in all standard sizes</p>
+          <p>Colors: Navy, Charcoal, Cream</p>
+          <div class="price">R1200</div>
+          <div class="product-actions">
+            <a href="https://wa.me/27123456789?text=I%20want%20to%20order%20the%20Upholstered%20Headboard" class="btn-order">Order Now</a>
+            <div class="product-icons">
+              <a href="tel:+27123456789" title="Call us"><i class="fas fa-phone"></i></a>
+              <a href="https://wa.me/27123456789" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Wooden Headboard">
+        </div>
+        <div class="product-info">
+          <h3>Wooden Headboard</h3>
+          <p>Available in all standard sizes</p>
+          <p>Colors: Oak, Walnut, White</p>
+          <div class="price">R1500</div>
+          <div class="product-actions">
+            <a href="https://wa.me/27123456789?text=I%20want%20to%20order%20the%20Wooden%20Headboard" class="btn-order">Order Now</a>
+            <div class="product-icons">
+              <a href="tel:+27123456789" title="Call us"><i class="fas fa-phone"></i></a>
+              <a href="https://wa.me/27123456789" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Modern Headboard">
+        </div>
+        <div class="product-info">
+          <h3>Modern Headboard</h3>
+          <p>Available in all standard sizes</p>
+          <p>Colors: Black, White, Grey</p>
+          <div class="price">R1100</div>
+          <div class="product-actions">
+            <a href="https://wa.me/27123456789?text=I%20want%20to%20order%20the%20Modern%20Headboard" class="btn-order">Order Now</a>
+            <div class="product-icons">
+              <a href="tel:+27123456789" title="Call us"><i class="fas fa-phone"></i></a>
+              <a href="https://wa.me/27123456789" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="delivery" class="section">
+    <div class="section-title">
+      <h2>Delivery Information</h2>
+    </div>
+    <div class="delivery-info">
+      <p>We offer reliable delivery services throughout Gauteng. Our delivery fees are based on your location:</p>
+      
+      <table class="delivery-table">
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Delivery Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pretoria</td>
+            <td>R250</td>
+          </tr>
+          <tr>
+            <td>Johannesburg</td>
+            <td>R300</td>
+          </tr>
+          <tr>
+            <td>Roodepoort</td>
+            <td>R300</td>
+          </tr>
+          <tr>
+            <td>Other Gauteng Areas</td>
+            <td>Contact for quote</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <p style="margin-top: 1.5rem;">Payment options: Cash on delivery or EFT upon delivery.</p>
+    </div>
+  </section>
+  
+  <section id="contact" class="section">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="contact-info">
+      <div class="contact-card">
+        <h3>Location</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Pretoria, Gauteng</p>
+        
+        <h3>Contact Details</h3>
+        <p><i class="fas fa-phone"></i> <a href="tel:+27123456789">+27 12 345 6789</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/27123456789">Chat on WhatsApp</a></p>
+        
+        <h3>Business Hours</h3>
+        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+        <p>Saturday: 9:00 AM - 2:00 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+      
+      <div class="contact-card">
+        <h3>Follow Us</h3>
+        <p>Stay updated with our latest products and offers</p>
+        
+        <div class="social-icons">
+          <a href="https://facebook.com/bokamosowarehouse" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://tiktok.com/@bokamosowarehouse" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://instagram.com/bokamosowarehouse" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <h3>Email Us</h3>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@bokamosowarehouse.co.za">info@bokamosowarehouse.co.za</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="logo">Bokamoso Warehouse</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="copyright">
+        &copy; 2023 Bokamoso Warehouse. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
